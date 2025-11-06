@@ -1,5 +1,8 @@
 # EX-NO14-HASH-ALGORITHM
 
+# NAME : MABBU ADARSH
+# REG.NO : 212223100028
+
 ## AIM:
 To implement HASH ALGORITHM
 
@@ -27,9 +30,42 @@ To implement HASH ALGORITHM
 
 
 ## Program:
+```
+#include <stdio.h>
+#include <string.h>
 
+// Simple hash function for demonstration
+unsigned int simple_hash(const char *message) {
+    unsigned int hash = 0;
+    int i;
+
+    for (i = 0; i < strlen(message); i++) {
+        hash = (hash * 31) + message[i]; // Multiply by a prime number and add character value
+    }
+
+    return hash;
+}
+
+int main() {
+    char message[256];
+    unsigned int hash_value;
+
+    // Input message from user
+    printf("Enter the message to hash: ");
+    fgets(message, sizeof(message), stdin);
+    message[strcspn(message, "\n")] = '\0'; // Remove newline character
+
+    // Generate hash
+    hash_value = simple_hash(message);
+
+    printf("\nGenerated hash value: %u\n", hash_value);
+
+    return 0;
+}
+```
 
 ## Output:
+<img width="545" height="434" alt="image" src="https://github.com/user-attachments/assets/639c7d16-7ccb-4a16-b40f-eb5717db2c77" />
 
 ## Result:
 The program is executed successfully.
